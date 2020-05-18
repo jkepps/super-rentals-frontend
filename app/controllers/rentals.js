@@ -5,7 +5,7 @@ export default Controller.extend({
     filterByCity(param) {
       if (param !== "") {
         return this.store
-          .query("rental", { city: param })
+          .query("rental", { filter: { search: param } })
           .then((results) => ({ query: param, results }));
       } else {
         return this.store
